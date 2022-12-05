@@ -1,5 +1,10 @@
 package proyectoarboles;
 
+/**
+ *
+ * @author Equipo 10
+ */
+
 import java.util.LinkedList;
 
 public class Nodo {
@@ -8,6 +13,9 @@ public class Nodo {
     Nodo izq = null;
     Nodo der = null;
     int nivel;
+    boolean insertado = false;
+    boolean derecho = false;
+    boolean izquierdo = false;
 
     public Nodo() {
         izq = der = null;
@@ -23,10 +31,16 @@ public class Nodo {
         der = rt;
     }
 
+    /**
+     * @param izq Método que modifica el nodo izquierdo
+     */
     public void setIzq(Nodo izq) {
         this.izq = izq;
     }
 
+    /**
+     * @param der Método que modifica el nodo derecho
+     */
     public void setDer(Nodo der) {
         this.der = der;
     }
@@ -56,7 +70,7 @@ public class Nodo {
         }
         return visitados;
     }
-    
+
     public LinkedList postOrden(LinkedList visitados, Nodo coso) {
         if (coso != null) {
             if (coso.izq != null) {
@@ -69,7 +83,7 @@ public class Nodo {
         }
         return visitados;
     }
-    
+
     @Override
     public String toString() {
         return "valor= " + valor + " nivel= " + nivel;
